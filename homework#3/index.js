@@ -55,12 +55,21 @@ var calculator = function(firstNumber) {
 
             }
 
+        },
+        mul: function() {
+            var argumentsLength = arguments.length,
+                i = 0,
+                mul = this.source;
+
+            for (i; i < argumentsLength; i++) {
+
+                mul = mul * arguments[i];
+
+            }
+
+            return mul;
         }
     };
 };
 
-var myCalculator = calculator(100);
-
-console.log(myCalculator.sum(1, 2, 3));
-console.log(myCalculator.dif(10, 20));
-console.log(myCalculator.div(2, 2));
+module.exports = calculator;
