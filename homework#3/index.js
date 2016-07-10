@@ -27,6 +27,34 @@ var calculator = function(firstNumber) {
             }
 
             return this.source + dif;
+        },
+        div: function() {
+            var argumentsLength = arguments.length,
+                i = 0,
+                div = this.source;
+
+            try {
+
+                for (i; i < argumentsLength; i++) {
+
+                    if (arguments[i] === 0) {
+
+                        throw new Error('На ноль делить нельзя');
+
+                    }
+
+                    div = div / arguments[i];
+
+                }
+
+                return div;
+
+            } catch(e) {
+
+                return e;
+
+            }
+
         }
     };
 };
@@ -35,3 +63,4 @@ var myCalculator = calculator(100);
 
 console.log(myCalculator.sum(1, 2, 3));
 console.log(myCalculator.dif(10, 20));
+console.log(myCalculator.div(2, 2));
